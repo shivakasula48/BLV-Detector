@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+requests
+beautifulsoup4
+selenium
+networkx
+pydantic
+reportlab
+python-dotenv
