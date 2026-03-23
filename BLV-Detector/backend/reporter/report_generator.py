@@ -9,7 +9,7 @@ from reportlab.pdfgen import canvas
 from reportlab.lib import colors
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak
-from reportlab.lib.units import inch
+from reportlab.lib.units import inch, mm
 
 class ReportGenerator:
 	"""
@@ -99,9 +99,9 @@ class ReportGenerator:
 			elements.append(Spacer(1, 0.2 * inch))
 
 		# Footer with page numbers
-		def add_page_number(canvas, doc):
-			page_num = canvas.getPageNumber()
+		def add_page_number(c, doc):
+			page_num = c.getPageNumber()
 			text = f"Page {page_num}"
-			canvas.drawRightString(200 * mm, 15 * mm, text)
+			c.drawRightString(200 * mm, 15 * mm, text)
 
 		doc.build(elements, onLaterPages=add_page_number, onFirstPage=add_page_number)

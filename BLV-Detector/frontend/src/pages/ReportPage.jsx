@@ -30,10 +30,12 @@ export default function ReportPage() {
 
   async function handleDownloadPdf() {
     try {
-      const blob = await downloadPdfReport(vulnerabilities, targetUrl)
+      const blob = await downloadPdfReport(vulnerabilities, targetUrl, scan_metadata)
       const url = URL.createObjectURL(blob)
       const a = document.createElement('a')
-      a.href = url; a.download = 'blv-report.pdf'; a.click()
+      a.href = url
+      a.download = 'BLV-Detector-Report.pdf'
+      a.click()
       URL.revokeObjectURL(url)
     } catch (err) {
       alert('PDF download failed: ' + err.message)
