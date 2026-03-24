@@ -52,7 +52,7 @@ BLV-Detector is an automated Broken Link and Vulnerability (BLV) detection tool 
 
 **Step 1 - Clone the repository:**
 ```bash
-git clone https://github.com/YOUR_USERNAME/BLV-Detector.git
+git clone https://github.com/shivakasula48/BLV-Detector.git
 cd BLV-Detector
 ```
 
@@ -142,6 +142,13 @@ curl -X POST http://localhost:8000/api/report/pdf -H "Content-Type: application/
 
 ## Demo / Tested Targets
 
+BLV-Detector has been tested on the following demo and intentionally vulnerable targets:
+
+- [demo.testfire.net](http://demo.testfire.net) — A demo banking site with known business logic flaws and exposed files (e.g., `/admin/clients.xls`).
+- [vulnhub.com](https://www.vulnhub.com) — A collection of intentionally vulnerable VMs for security testing.
+- [OWASP Juice Shop](https://owasp.org/www-project-juice-shop/) — A modern intentionally insecure web app for security training.
+
+**Note:** Only scan applications you own or have explicit permission to test.
 
 
 ## Project Structure
@@ -218,9 +225,20 @@ Planned improvements and new features:
 
 ## Ethical Disclaimer
 
+This tool is intended for educational purposes and authorized security testing only.
+
+- Do **not** use BLV-Detector on systems without explicit, written permission.
+- The authors are not responsible for any misuse or damage caused by unauthorized testing.
+- Always follow ethical hacking guidelines and local laws.
 
 ## Academic Context
 
+This project was developed as a final year major project at Sir Padampat Singhania University (SPSU).
+
+- **Student:** Kasula Shiva (22CS002580)
+- **Supervisor:** Dr. Manish Tiwari
+- **Department:** Faculty of Computing and Informatics
+- **Year:** 2026
 
 ## License
 
