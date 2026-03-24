@@ -142,10 +142,7 @@ BLV-Detector is an automated Broken Link and Vulnerability (BLV) detection tool 
 - Git
 
 
-**Step 1 - Clone the repository:**
-```bash
-git clone https://github.com/YOUR_USERNAME/BLV-Detector.git
-```
+
 ## Installation & Setup
 
 **Step 1 - Clone the repository:**
@@ -269,9 +266,6 @@ curl -X POST http://localhost:8000/api/report/pdf -H "Content-Type: application/
    - Each finding includes a step-by-step reproduction guide
 
 ## Demo / Tested Targets
-
-
----
 - **URL:** http://demo.testfire.net/admin/clients.xls
 - **Description:** Client data Excel file accessible without authentication
 
