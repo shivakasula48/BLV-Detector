@@ -57,6 +57,7 @@
 - **Automated workflow graph visualization**
 - **JSON and PDF report generation**
 
+<<<<<<< HEAD
 ---
 | FastAPI      | 0.110.0                     |
 | Python       | 3.13                        |
@@ -75,6 +76,62 @@ BLV-Detector is an automated Broken Link and Vulnerability (BLV) detection tool 
 - Interactive frontend dashboard
 - Detailed reports with remediation guidance
 | React Router | v7                          |
+=======
+
+---
+
+## System Architecture
+
+```
+👤 User (Browser)
+   │
+   ▼  HTTP
+⚛️  React Frontend  (localhost:5173)
+   │
+   ▼  REST API
+┌──────────────────────────────────────────────┐
+│      🐍 FastAPI Backend  (localhost:8000)     │
+│                                              │
+│  🕷️ Crawler → 📊 Analyzer → 🔍 Detector → 📄 Reporter │
+└──────────────────────────────────────────────┘
+   │
+   ▼  HTTP Requests
+🎯 Target Web Application
+```
+
+### Backend Modules
+
+| Module   | Library                    | Function                                 |
+|----------|----------------------------|------------------------------------------|
+| Crawler  | BeautifulSoup4 + Requests  | DFS traversal, link/form/param extraction|
+| Analyzer | NetworkX DiGraph           | Workflow graph building, entry point detection |
+| Detector | Custom algorithms          | 6 BLV detection checks                   |
+| Reporter | ReportLab                  | JSON and PDF report generation           |
+
+## Tech Stack
+
+### Backend
+| Technology      | Version | Purpose                |
+|-----------------|---------|------------------------|
+| Python          | 3.13    | Runtime                |
+| FastAPI         | Latest  | REST API framework     |
+| Uvicorn         | Latest  | ASGI server            |
+| BeautifulSoup4  | Latest  | HTML parsing           |
+| Requests        | Latest  | HTTP client            |
+| NetworkX        | Latest  | Workflow graph (DiGraph)|
+| Pydantic        | Latest  | Data validation        |
+| ReportLab       | Latest  | PDF generation         |
+
+### Frontend
+| Technology    | Version | Purpose              |
+|---------------|---------|----------------------|
+| React         | 19      | UI framework         |
+| Vite          | 8       | Build tool           |
+| Tailwind CSS  | 3       | Styling              |
+| Axios         | Latest  | API calls            |
+| ReactFlow     | 11      | Graph visualization  |
+| React Router  | v7      | Client-side routing  |
+>>>>>>> 4df210a (Fix and complete README.md with all sections)
 
 ---
 
@@ -84,9 +141,17 @@ BLV-Detector is an automated Broken Link and Vulnerability (BLV) detection tool 
 - npm or yarn
 - Git
 
+<<<<<<< HEAD
 **Step 1 - Clone the repository:**
 ```bash
 git clone https://github.com/YOUR_USERNAME/BLV-Detector.git
+=======
+## Installation & Setup
+
+**Step 1 - Clone the repository:**
+```bash
+git clone https://github.com/shivakasula48/BLV-Detector.git
+>>>>>>> 4df210a (Fix and complete README.md with all sections)
 cd BLV-Detector
 ```
 
@@ -109,19 +174,40 @@ npm install
 
 ## Running the Project
 
+<<<<<<< HEAD
 **Start backend:**
 ```
 
 **Start frontend:**
+=======
+### Terminal 1 — Start Backend
+```bash
+cd BLV-Detector/backend
+source venv/bin/activate
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+```
+
+### Terminal 2 — Start Frontend
+>>>>>>> 4df210a (Fix and complete README.md with all sections)
 ```bash
 cd frontend
 npm run dev
 ```
 
+<<<<<<< HEAD
 **Access URLs:**
 - Frontend: [http://localhost:5173](http://localhost:5173)
 - Backend API: [http://localhost:8000](http://localhost:8000)
 - API Docs: [http://localhost:8000/docs](http://localhost:8000/docs)
+=======
+### Access URLs
+| Service         | URL                        |
+|-----------------|----------------------------|
+| Frontend App    | http://localhost:5173      |
+| Backend API     | http://localhost:8000      |
+| API Docs        | http://localhost:8000/docs |
+| Health Check    | http://localhost:8000/health |
+>>>>>>> 4df210a (Fix and complete README.md with all sections)
 
 ---
 
@@ -186,11 +272,39 @@ curl -X POST http://localhost:8000/api/report/pdf -H "Content-Type: application/
 
 ## Demo / Tested Targets
 
+<<<<<<< HEAD
 ---
 - **URL:** http://demo.testfire.net/admin/clients.xls
 - **Description:** Client data Excel file accessible without authentication
 
 ---
+=======
+These are deliberately vulnerable or demo applications safe to scan:
+
+| Target                        | URL                          | Best Depth |
+|-------------------------------|------------------------------|------------|
+| IBM Altoro Mutual (recommended)| http://demo.testfire.net     | 2          |
+| VulnHub                       | https://www.vulnhub.com      | 2          |
+
+> ⚠️ Only scan targets you own or have explicit permission to test.
+
+## Real Vulnerability Found
+
+During testing on http://demo.testfire.net:
+
+```
+Type        : Workflow Bypass
+Severity    : HIGH
+Affected URL: http://demo.testfire.net/admin/clients.xls
+Description : Client data Excel file is accessible in /admin/
+                     without any login or authentication.
+
+Steps to Reproduce:
+   1. Open browser without logging in
+   2. Navigate directly to http://demo.testfire.net/admin/clients.xls
+   3. File loads successfully — vulnerability confirmed
+```
+>>>>>>> 4df210a (Fix and complete README.md with all sections)
 
 ## Project Structure
 ```
@@ -291,4 +405,14 @@ BLV-Detector/
 
 ## License
 
+<<<<<<< HEAD
+=======
+---
+<div align="center">
+Made with ❤️ by Kasula Shiva &nbsp;|&nbsp; BLV-Detector © 2026
+</div>
+
+## License
+
+>>>>>>> 4df210a (Fix and complete README.md with all sections)
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
