@@ -185,7 +185,7 @@ uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 ### Terminal 2 — Start Frontend
->>>>>>> 4df210a (Fix and complete README.md with all sections)
+
 ```bash
 cd frontend
 npm run dev
@@ -402,14 +402,7 @@ BLV-Detector/
 ---
 
 ## License
-
-
 ---
 <div align="center">
-Made with ❤️ by Kasula Shiva &nbsp;|&nbsp; BLV-Detector © 2026
+Made  by Kasula Shiva &nbsp;|&nbsp; BLV-Detector © 2026
 </div>
-
-## License
-
->>>>>>> 4df210a (Fix and complete README.md with all sections)
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
