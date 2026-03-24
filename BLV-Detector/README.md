@@ -24,6 +24,18 @@
 | Python       | 3.13                        |
 | BeautifulSoup4 | Latest                    |
 BLV-Detector is an automated Broken Link and Vulnerability (BLV) detection tool designed for security researchers, QA engineers, and DevOps teams. It scans web applications for six types of BLVs, providing severity ratings and actionable reports.
+
+### Why BLV-Detector?
+- **Traditional scanners** (like Burp Suite, Nikto, OWASP ZAP) focus on technical vulnerabilities (e.g., XSS, SQLi) but often miss business logic flaws that arise from improper workflow implementation.
+- **BLV-Detector** models and analyzes the logical flow of web applications, uncovering vulnerabilities that can only be detected by understanding user actions and workflow sequences.
+- It provides actionable, severity-based reports and visualizes workflow graphs to help teams quickly identify and remediate issues.
+- Designed for both manual and automated security testing, it bridges the gap between technical and business logic security.
+
+### Who is it for?
+- **Security Researchers & Pentesters:** To discover business logic vulnerabilities that automated tools often miss.
+- **QA Engineers:** To validate that workflows are implemented securely and as intended.
+- **Developers:** To proactively identify and fix logic flaws during development.
+- **DevOps Teams:** To integrate workflow-based security checks into CI/CD pipelines.
 | NetworkX     | Latest                      |
 | Pydantic     | Latest                      |
 **Detection Types:**
