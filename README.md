@@ -145,7 +145,7 @@ BLV-Detector is an automated Broken Link and Vulnerability (BLV) detection tool 
 **Step 1 - Clone the repository:**
 ```bash
 git clone https://github.com/YOUR_USERNAME/BLV-Detector.git
-=======
+```
 ## Installation & Setup
 
 **Step 1 - Clone the repository:**
