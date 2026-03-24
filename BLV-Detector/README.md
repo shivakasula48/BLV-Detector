@@ -6,58 +6,20 @@
 
 > ⭐ **Star this repo if you find it useful!**
 
----
 
 ## Table of Contents
-- [Overview](#overview)
-- [Key Features](#key-features)
-- [System Architecture](#system-architecture)
-- [Tech Stack](#tech-stack)
-- [Prerequisites](#prerequisites)
-- [Installation & Setup](#installation--setup)
-- [Running the Project](#running-the-project)
-- [How to Use](#how-to-use)
-- [API Endpoints](#api-endpoints)
-- [Scan Results Explained](#scan-results-explained)
-- [Demo / Tested Targets](#demo--tested-targets)
-- [Real Vulnerability Found](#real-vulnerability-found)
-- [Project Structure](#project-structure)
-- [Advantages](#advantages)
-- [Limitations](#limitations)
-- [Future Enhancements](#future-enhancements)
-- [Contributing](#contributing)
-- [Ethical Disclaimer](#ethical-disclaimer)
-- [Academic Context](#academic-context)
-- [License](#license)
 
----
 
 ## Overview
 **BLV-Detector** is an advanced, workflow-aware vulnerability scanner for web applications. Unlike traditional scanners (Burp Suite, Nikto, OWASP ZAP), BLV-Detector analyzes the logical flow of web apps to uncover business logic vulnerabilities (BLVs) that automated tools often miss.
 
 **Why BLV-Detector?**
-- Traditional scanners focus on technical flaws (XSS, SQLi, etc.) but miss workflow-based issues.
-- BLV-Detector models user workflows, detects logic flaws, and visualizes attack paths.
 
 **Who is it for?**
-- Security researchers
-- Pentesters
-- Developers
-- QA engineers
 
----
 
 ## Key Features
-- **Workflow Bypass (High):** Detects unauthorized access to restricted steps.
-- **Step Skipping (High):** Finds missing step validation in workflows.
-- **Parameter Tampering (Medium):** Identifies manipulation of workflow parameters.
-- **IDOR (Medium):** Detects insecure direct object references.
-- **Price Manipulation (High):** Finds flaws in price calculation and validation.
-- **Unauthorized State Reuse (Medium):** Detects reuse of workflow states/tokens.
-- **Automated workflow graph visualization**
-- **JSON and PDF report generation**
 
----
 | FastAPI      | 0.110.0                     |
 | Python       | 3.13                        |
 | BeautifulSoup4 | Latest                    |
@@ -71,18 +33,10 @@ BLV-Detector is an automated Broken Link and Vulnerability (BLV) detection tool 
    4. Security Misconfiguration (Medium)
    5. Vulnerable Components (Medium)
    6. Broken Links (Low)
-- Severity badges for each finding
-- Interactive frontend dashboard
-- Detailed reports with remediation guidance
 | React Router | v7                          |
 
----
 
 ## Prerequisites
-- Python 3.8 or higher (**Python 3.13 recommended**)
-- Node.js 18 or higher
-- npm or yarn
-- Git
 
 **Step 1 - Clone the repository:**
 ```bash
@@ -105,7 +59,6 @@ cd ../frontend
 npm install
 ```
 
----
 
 ## Running the Project
 
@@ -119,11 +72,7 @@ npm run dev
 ```
 
 **Access URLs:**
-- Frontend: [http://localhost:5173](http://localhost:5173)
-- Backend API: [http://localhost:8000](http://localhost:8000)
-- API Docs: [http://localhost:8000/docs](http://localhost:8000/docs)
 
----
 
 ## How to Use
 1. Open [http://localhost:5173](http://localhost:5173) in your browser
@@ -135,7 +84,6 @@ npm run dev
 7. Click **Generate Report** for JSON report
 8. Click **Download PDF** for PDF report
 
----
 
 ## API Endpoints
 
@@ -167,30 +115,22 @@ curl -X POST http://localhost:8000/api/report/json -H "Content-Type: application
 curl -X POST http://localhost:8000/api/report/pdf -H "Content-Type: application/json" -d '{"results": {...}}' --output report.pdf
 ```
 
----
 
 ## Scan Results Explained
-- **Vulnerability Types:**
    - Workflow Bypass: Accessing restricted steps without authorization
    - Step Skipping: Skipping required workflow steps
    - Parameter Tampering: Manipulating workflow parameters
    - IDOR: Accessing objects by modifying references
    - Price Manipulation: Changing price-related parameters
    - Unauthorized State Reuse: Reusing tokens or states
-- **Severity Levels:**
    - High: Critical business logic flaws
    - Medium: Significant but less critical
    - Low: Informational or minor issues
-- **Steps to Reproduce:**
    - Each finding includes a step-by-step reproduction guide
 
 ## Demo / Tested Targets
 
----
-- **URL:** http://demo.testfire.net/admin/clients.xls
-- **Description:** Client data Excel file accessible without authentication
 
----
 
 ## Project Structure
 ```
@@ -228,42 +168,15 @@ BLV-Detector/
 └── package.json                # Project-level config
 ```
 
----
 
 ## Advantages
-- Workflow-aware scanning (unique vs traditional tools)
-- Detects business logic flaws that Burp Suite and Nikto miss
-- Full-stack web application — no CLI required
-- Interactive workflow graph visualization
-- Professional PDF report generation
-- Real browser headers to avoid bot detection
-- URL parameter parsing for deeper detection
-- Clean, minimal false positives
-- Open source and extensible
 
----
 
 ## Limitations
-- Does not support JavaScript-rendered pages (no Selenium yet)
-- Cannot perform authenticated scanning (no login support yet)
-- localStorage has 5MB limit for large scans
-- Crawl depth > 3 may take significant time on large sites
-- Detection based on URL patterns — may produce false positives
-- Manual review recommended for all findings
-- Does not test actual exploitability
 
----
 
 ## Future Enhancements
-- Authenticated scanning support
-- Selenium/Playwright for JS-rendered pages
-- Docker containerization
-- Scan history and comparison dashboard
-- CI/CD pipeline integration
-- Rate limiting and scan queue
-- DVWA integration for testing
 
----
 
 ## Contributing
 1. Fork the repo
@@ -271,23 +184,12 @@ BLV-Detector/
 3. Commit changes
 4. Push and open Pull Request
 
----
 
 ## Ethical Disclaimer
-- Only scan applications you own or have explicit permission to test
-- This tool is for educational and authorized security testing only
-- Unauthorized scanning may be illegal
 
----
 
 ## Academic Context
-- Final Year Major Project
-- Student: Kasula Shiva (Enrollment: 22CS002580)
-- Guide: Dr. Manish Tiwari
-- Institution: Sir Padampat Singhania University
-- Department: Faculty of Computing and Informatics
 
----
 
 ## License
 
