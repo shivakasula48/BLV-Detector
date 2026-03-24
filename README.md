@@ -57,7 +57,7 @@
 - **Automated workflow graph visualization**
 - **JSON and PDF report generation**
 
-<<<<<<< HEAD
+
 ---
 | FastAPI      | 0.110.0                     |
 | Python       | 3.13                        |
@@ -89,11 +89,11 @@ BLV-Detector is an automated Broken Link and Vulnerability (BLV) detection tool 
 ⚛️  React Frontend  (localhost:5173)
    │
    ▼  REST API
-┌──────────────────────────────────────────────┐
-│      🐍 FastAPI Backend  (localhost:8000)     │
-│                                              │
-│  🕷️ Crawler → 📊 Analyzer → 🔍 Detector → 📄 Reporter │
-└──────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────┐
+│      🐍 FastAPI Backend  (localhost:8000)                │
+│                                                          │
+│  🕷️ Crawler → 📊 Analyzer → 🔍 Detector → 📄 Reporter    |
+└──────────────────────────────────────────────────────────┘
    │
    ▼  HTTP Requests
 🎯 Target Web Application
@@ -131,7 +131,7 @@ BLV-Detector is an automated Broken Link and Vulnerability (BLV) detection tool 
 | Axios         | Latest  | API calls            |
 | ReactFlow     | 11      | Graph visualization  |
 | React Router  | v7      | Client-side routing  |
->>>>>>> 4df210a (Fix and complete README.md with all sections)
+
 
 ---
 
@@ -141,7 +141,7 @@ BLV-Detector is an automated Broken Link and Vulnerability (BLV) detection tool 
 - npm or yarn
 - Git
 
-<<<<<<< HEAD
+
 **Step 1 - Clone the repository:**
 ```bash
 git clone https://github.com/YOUR_USERNAME/BLV-Detector.git
@@ -151,7 +151,7 @@ git clone https://github.com/YOUR_USERNAME/BLV-Detector.git
 **Step 1 - Clone the repository:**
 ```bash
 git clone https://github.com/shivakasula48/BLV-Detector.git
->>>>>>> 4df210a (Fix and complete README.md with all sections)
+
 cd BLV-Detector
 ```
 
@@ -174,12 +174,9 @@ npm install
 
 ## Running the Project
 
-<<<<<<< HEAD
-**Start backend:**
-```
 
-**Start frontend:**
-=======
+**Start backend:**
+
 ### Terminal 1 — Start Backend
 ```bash
 cd BLV-Detector/backend
@@ -194,12 +191,13 @@ cd frontend
 npm run dev
 ```
 
-<<<<<<< HEAD
+
 **Access URLs:**
 - Frontend: [http://localhost:5173](http://localhost:5173)
 - Backend API: [http://localhost:8000](http://localhost:8000)
 - API Docs: [http://localhost:8000/docs](http://localhost:8000/docs)
-=======
+
+
 ### Access URLs
 | Service         | URL                        |
 |-----------------|----------------------------|
@@ -207,7 +205,7 @@ npm run dev
 | Backend API     | http://localhost:8000      |
 | API Docs        | http://localhost:8000/docs |
 | Health Check    | http://localhost:8000/health |
->>>>>>> 4df210a (Fix and complete README.md with all sections)
+
 
 ---
 
@@ -272,19 +270,19 @@ curl -X POST http://localhost:8000/api/report/pdf -H "Content-Type: application/
 
 ## Demo / Tested Targets
 
-<<<<<<< HEAD
+
 ---
 - **URL:** http://demo.testfire.net/admin/clients.xls
 - **Description:** Client data Excel file accessible without authentication
 
 ---
-=======
+
 These are deliberately vulnerable or demo applications safe to scan:
 
-| Target                        | URL                          | Best Depth |
-|-------------------------------|------------------------------|------------|
+| Target                         | URL                          | Best Depth |
+|--------------------------------|------------------------------|------------|
 | IBM Altoro Mutual (recommended)| http://demo.testfire.net     | 2          |
-| VulnHub                       | https://www.vulnhub.com      | 2          |
+| VulnHub                        | https://www.vulnhub.com      | 2          |
 
 > ⚠️ Only scan targets you own or have explicit permission to test.
 
@@ -304,7 +302,7 @@ Steps to Reproduce:
    2. Navigate directly to http://demo.testfire.net/admin/clients.xls
    3. File loads successfully — vulnerability confirmed
 ```
->>>>>>> 4df210a (Fix and complete README.md with all sections)
+
 
 ## Project Structure
 ```
@@ -405,8 +403,7 @@ BLV-Detector/
 
 ## License
 
-<<<<<<< HEAD
-=======
+
 ---
 <div align="center">
 Made with ❤️ by Kasula Shiva &nbsp;|&nbsp; BLV-Detector © 2026
