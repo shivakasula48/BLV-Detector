@@ -170,13 +170,32 @@ BLV-Detector/
 
 
 ## Advantages
-
+BLV-Detector offers several unique benefits over traditional vulnerability scanners:
+- **Workflow-Aware Detection:** Identifies business logic flaws that most automated tools miss by analyzing the actual user workflow.
+- **Comprehensive Vulnerability Coverage:** Detects six types of BLVs, including authentication, access control, and data exposure issues.
+- **Severity-Based Reporting:** Clearly categorizes findings by severity, helping prioritize remediation.
+- **Modern UI:** User-friendly React dashboard for real-time scan progress and results.
+- **Extensible Architecture:** Modular backend and frontend make it easy to add new detection types or reporting formats.
+- **Automated Reporting:** Generates detailed, actionable reports in both JSON and PDF formats.
 
 ## Limitations
-
+While BLV-Detector is powerful, it has some limitations:
+- **Web Apps Only:** Focused on web applications; does not support mobile or desktop apps.
+- **No Authenticated Scanning:** Currently does not support login/authenticated session scanning.
+- **Limited JavaScript Rendering:** Does not handle JavaScript-heavy or single-page applications (no headless browser integration yet).
+- **Internet Required:** Some scans require internet access for dependency checks.
+- **Zero-Day Gaps:** May not detect unknown or zero-day vulnerabilities.
+- **Manual Review Needed:** Automated findings should be manually reviewed for accuracy.
 
 ## Future Enhancements
-
+Planned improvements and new features:
+- **Authenticated Scanning:** Add support for login workflows and session management.
+- **Headless Browser Integration:** Use Selenium or Playwright for JavaScript-rendered pages.
+- **CI/CD Integration:** Enable automated scanning in DevOps pipelines.
+- **Multi-Format Reports:** Export reports in additional formats (HTML, CSV).
+- **Dashboard Authentication:** Add user authentication and role-based access to the dashboard.
+- **Scan Scheduling:** Allow users to schedule recurring scans.
+- **Expanded Vulnerability Types:** Add detection for more business logic and technical vulnerabilities.
 
 ## Contributing
 1. Fork the repo
