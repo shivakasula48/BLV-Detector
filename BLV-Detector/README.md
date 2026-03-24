@@ -56,45 +56,24 @@
 - **Unauthorized State Reuse (Medium):** Detects reuse of workflow states/tokens.
 - **Automated workflow graph visualization**
 - **JSON and PDF report generation**
-- **Real browser-like crawling with DFS traversal**
 
 ---
-
-## System Architecture
-**4-Layer Architecture:**
-
-```
-User → React Frontend → FastAPI Backend → Target Web App
-```
-
-**Backend Modules:**
-- **Crawler:** Uses BeautifulSoup4, Requests, DFS for real browser-like crawling.
-- **Analyzer:** Builds workflow graphs using NetworkX DiGraph.
-- **Detector:** Implements 6 BLV detection algorithms.
-- **Reporter:** Generates JSON and PDF reports (ReportLab).
-
----
-
-## Tech Stack
-
-| Backend      | Version/Libs                |
-|--------------|-----------------------------|
 | FastAPI      | 0.110.0                     |
-| Uvicorn      | Latest                      |
 | Python       | 3.13                        |
 | BeautifulSoup4 | Latest                    |
-| Requests     | Latest                      |
+BLV-Detector is an automated Broken Link and Vulnerability (BLV) detection tool designed for security researchers, QA engineers, and DevOps teams. It scans web applications for six types of BLVs, providing severity ratings and actionable reports.
 | NetworkX     | Latest                      |
 | Pydantic     | Latest                      |
-| ReportLab    | Latest                      |
-
-| Frontend     | Version/Libs                |
-|--------------|-----------------------------|
-| React        | 19                          |
-| Vite         | Latest                      |
-| Tailwind CSS | Latest                      |
-| Axios        | Latest                      |
-| ReactFlow    | Latest                      |
+**Detection Types:**
+   1. Broken Authentication (Critical)
+   2. Broken Access Control (High)
+   3. Sensitive Data Exposure (High)
+   4. Security Misconfiguration (Medium)
+   5. Vulnerable Components (Medium)
+   6. Broken Links (Low)
+- Severity badges for each finding
+- Interactive frontend dashboard
+- Detailed reports with remediation guidance
 | React Router | v7                          |
 
 ---
@@ -104,10 +83,6 @@ User → React Frontend → FastAPI Backend → Target Web App
 - Node.js 18 or higher
 - npm or yarn
 - Git
-
----
-
-## Installation & Setup
 
 **Step 1 - Clone the repository:**
 ```bash
@@ -135,10 +110,6 @@ npm install
 ## Running the Project
 
 **Start backend:**
-```bash
-cd backend
-source venv/bin/activate
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 **Start frontend:**
@@ -185,11 +156,8 @@ curl http://localhost:8000/health
 
 # Crawl target URL
 curl -X POST http://localhost:8000/api/crawl -H "Content-Type: application/json" -d '{"url": "http://demo.testfire.net", "depth": 2}'
-
-# Analyze workflow graph
 curl -X POST http://localhost:8000/api/analyze -H "Content-Type: application/json" -d '{"graph": {...}}'
 
-# Detect vulnerabilities
 curl -X POST http://localhost:8000/api/detect -H "Content-Type: application/json" -d '{"graph": {...}}'
 
 # Generate JSON report
@@ -215,21 +183,10 @@ curl -X POST http://localhost:8000/api/report/pdf -H "Content-Type: application/
    - Low: Informational or minor issues
 - **Steps to Reproduce:**
    - Each finding includes a step-by-step reproduction guide
-- **Manual Review:**
-   - Some findings may be false positives; always review manually
-
----
 
 ## Demo / Tested Targets
-- [http://demo.testfire.net](http://demo.testfire.net) — IBM Altoro Mutual (recommended)
-- [https://www.vulnhub.com](https://www.vulnhub.com) — VulnHub listings
-- **Note:** Only scan targets you have permission to scan
 
 ---
-
-## Real Vulnerability Found
-- **Type:** Workflow Bypass
-- **Severity:** High
 - **URL:** http://demo.testfire.net/admin/clients.xls
 - **Description:** Client data Excel file accessible without authentication
 
